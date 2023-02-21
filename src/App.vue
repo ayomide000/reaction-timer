@@ -1,15 +1,15 @@
 <template>
   <h1>Ninja Reaction Timer</h1>
-  <button @click='start'>play</button>
+  <button @click='start' :disabled="isPlaying">play</button>
+  <BlockGame v-if='isPlaying' :delay='delay' />
 </template>
 
 <script>
-
+  import BlockGame from './components/BlockGame.vue'
 
 export default {
   name: 'App',
-  components: {
-  },
+  components: {BlockGame},
   data() {
     return {
       isPlaying: false,
@@ -20,7 +20,7 @@ export default {
     start() {
       this.delay = 2000 + Math.random() * 5000
       this.isPlaying = true
-      console.log(this.delay);
+      // console.log(this.delay);
     }
   },
 }
