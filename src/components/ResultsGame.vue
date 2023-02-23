@@ -21,7 +21,7 @@ export default {
         }
     }
 }
-</script>
+</script>npm r
 
 <style>
     .rank {
